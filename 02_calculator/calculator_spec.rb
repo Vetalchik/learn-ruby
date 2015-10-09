@@ -79,21 +79,51 @@ end
 
 describe "#multiply" do
 
-  it "multiplies two numbers"
+   it "multiplies empty array" do
+    multiply([]).should == 0
+    multiply([0]).should == 0
+   end
 
-  it "multiplies several numbers"
+  it "multiplies two numbers" do
+    multiply([10, 1.5]).should == 15
+  end
+
+  it "multiplies several numbers" do
+    multiply([10, 1.5, 2]).should == 30
+  end
 
 end
 
 describe "#power" do
-  it "raises one number to the power of another number"
+
+  it "raises one number to the power of another number" do
+    power(2,3).should == 8
+    power(15, 2).should == 225
+  end
+
 end
 
 # http://en.wikipedia.org/wiki/Factorial
 describe "#factorial" do
-  it "computes the factorial of 0"
-  it "computes the factorial of 1"
-  it "computes the factorial of 2"
-  it "computes the factorial of 5"
-  it "computes the factorial of 10"
+
+  it "computes the factorial of 0" do
+    factorial(0).should == 1
+  end
+
+  it "computes the factorial of 1" do
+    factorial(1).should == 1
+  end
+
+  it "computes the factorial of 2"  do
+    factorial(2).should == 2
+  end
+
+  it "computes the factorial of 5"  do
+    factorial(5).should == 5 * 4 * 3 * 2
+  end
+
+  it "computes the factorial of 10"  do
+    factorial(10).should == 10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 
+  end
+
 end
